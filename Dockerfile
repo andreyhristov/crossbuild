@@ -6,9 +6,8 @@ RUN set -x; \
     echo deb http://emdebian.org/tools/debian/ jessie main > /etc/apt/sources.list.d/emdebian.list \
  && curl -sL http://emdebian.org/tools/debian/emdebian-toolchain-archive.key | apt-key add - \
  && dpkg --add-architecture arm64                      \
- && dpkg --add-architecture i386                       \
  && apt-get update                                     \
- && apt-get install -y -q                              \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
         autoconf                                       \
         automake                                       \
         autotools-dev                                  \
@@ -36,8 +35,7 @@ RUN set -x; \
  && apt-get clean
 
 # Create symlinks for triples and set default CROSS_TRIPLE
-ENV LINUX_TRIPLES=arm-linux-gnueabi,arm-linux-gnueabihf,aarch64-linux-gnu,mipsel-linux-gnu,powerpc64le-linux-gnu                  \
-    WINDOWS_TRIPLES=i686-w64-mingw32,x86_64-w64-mingw32                                                                           \
+ENV LINUX_TRIPLES=aarch64-linux-gnu                  \
     CROSS_TRIPLE=x86_64-linux-gnu
 
 RUN for triple in $(echo ${LINUX_TRIPLES} | tr "," " "); do                                       \
