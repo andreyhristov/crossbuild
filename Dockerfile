@@ -38,7 +38,6 @@ RUN set -x; \
         mercurial                                      \
         multistrap                                     \
         patch                                          \
-        python-software-properties                     \
         software-properties-common                     \
         subversion                                     \
         wget                                           \
