@@ -1,4 +1,4 @@
-FROM buildpack-deps:wheezy-curl
+FROM buildpack-deps:stretch-curl
 MAINTAINER Manfred Touron <m@42.am> (https://github.com/moul)
 
 # Install deps
