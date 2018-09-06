@@ -3,7 +3,7 @@ MAINTAINER Manfred Touron <m@42.am> (https://github.com/moul)
 
 # Install deps
 RUN set -x; \
-    echo deb http://emdebian.org/tools/debian/ jessie main > /etc/apt/sources.list.d/emdebian.list \
+    echo deb http://emdebian.org/tools/debian/ stretch main > /etc/apt/sources.list.d/emdebian.list \
  && curl -sL http://emdebian.org/tools/debian/emdebian-toolchain-archive.key | apt-key add - \
  && dpkg --add-architecture arm64                      \
  && apt-get update                                     \
