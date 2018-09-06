@@ -11,7 +11,6 @@ RUN set -x; \
         autoconf                                       \
         automake                                       \
         autotools-dev                                  \
-        bc                                             \
         binfmt-support                                 \
         binutils-multiarch                             \
         binutils-multiarch-dev                         \
@@ -27,10 +26,8 @@ RUN set -x; \
         multistrap                                     \
         patch                                          \
         software-properties-common                     \
-        subversion                                     \
         wget                                           \
         xz-utils                                       \
-        cmake                                          \
         qemu-user-static                               \
  && apt-get clean
 
