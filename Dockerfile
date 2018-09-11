@@ -33,7 +33,7 @@ RUN set -x; \
 
 # Create symlinks for triples and set default CROSS_TRIPLE
 ENV LINUX_TRIPLES=aarch64-linux-gnu                  \
-    CROSS_TRIPLE=x86_64-linux-gnu
+    CROSS_TRIPLE=aarch64-linux-gnu
 
 RUN for triple in $(echo ${LINUX_TRIPLES} | tr "," " "); do                                       \
       for bin in /etc/alternatives/$triple-* /usr/bin/$triple-*; do                               \
