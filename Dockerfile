@@ -12,6 +12,8 @@ RUN set -x; \
 	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-security main restricted" >> /etc/apt/sources.list && \
 	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-security universe" >> /etc/apt/sources.list && \
 	echo "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ xenial-security multiverse" >> /etc/apt/sources.list && \
+	apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 40976EAF437D05B5 && \
+	apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32 && \
 	apt-get update                                     \
  && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
         autoconf                                       \
